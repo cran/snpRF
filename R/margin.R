@@ -37,9 +37,10 @@ plot.margin <- function(x, sort=TRUE, ...) {
     if (sort) x <- sort(x)
     nF <- factor(names(x))
     nlevs <- length(levels(nF))
-    if ( require(RColorBrewer) && nlevs < 12) {
-        pal <- RColorBrewer::brewer.pal(nlevs,"Set1")
-    } else {
+    if (("RColorBrewer" %in% installed.packages()[,"Package"]) && nlevs < 12) {
+         requireNamespace("RColorBrewer")
+         pal <- RColorBrewer::brewer.pal(nlevs,"Set1")
+    }else{
         pal <- rainbow(nlevs)
     }
     plot.default(x, col=pal[as.numeric(nF)], pch=20, ... )

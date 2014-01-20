@@ -166,7 +166,7 @@
     #        stop("Type of predictors in new data do not match that of the training data.")
     #}
 
-    mdim <- c(ncol(x.autosome),ncol(x.xchrom))
+    mdim <- c(nrow(x.autosome),nrow(x.xchrom))
     ntest <- n.p
     ntree <- object$forest$ntree
     maxcat <- max(object$forest$ncat)
