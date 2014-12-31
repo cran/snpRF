@@ -1,0 +1,18 @@
+useDynLib(snpRF)
+
+export(combine, getTree, grow, importance, margin, MDSplot, na.roughfix,
+       snpRF, snpRFImpute, treesize, tuneSnpRF,
+       varImpPlot, varUsed, snpRFNews, outlier, classCenter, snpRFcv)
+
+S3method(print, snpRF)
+S3method(predict, snpRF)
+S3method(plot, snpRF)
+S3method(plot, margin)
+S3method(margin, snpRF)
+S3method(grow, snpRF)
+S3method(importance, snpRF)
+S3method(outlier, snpRF)
+S3method(outlier, default)
+
+S3method(na.roughfix, data.frame)
+S3method(na.roughfix, default)
